@@ -3,13 +3,18 @@ import { createClient } from "@/utils/supabase/server";
 import FetchDataSteps from "@/components/tutorial/FetchDataSteps";
 import Header from "@/components/Header";
 import { redirect } from "next/navigation";
+import RandomButton from "@/components/RandomButton";
+import Feed from "@/components/Feed";
+import Collections from "@/components/Collections";
 
-export default async function Feed() {
+export default async function FeedPage() {
   const supabase = createClient();
 
   const {
     data: { user },
   } = await supabase.auth.getUser();
+
+  console.log(user);
 
   if (!user) {
     return redirect("/login");
@@ -21,7 +26,10 @@ export default async function Feed() {
         <Header />
 
         <main className="flex-1 flex flex-col gap-6">
-          <div>Your followed collections</div>
+          <div className="flex w-full">
+            <Feed />
+            <Collections />
+          </div>
         </main>
       </div>
     </div>
