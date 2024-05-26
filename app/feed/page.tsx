@@ -3,7 +3,7 @@ import { createClient } from "@/utils/supabase/server";
 import FetchDataSteps from "@/components/tutorial/FetchDataSteps";
 import Header from "@/components/Header";
 import { redirect } from "next/navigation";
-import RandomButton from "@/components/RandomButton";
+import RandomButton from "@/components/AddCollection";
 import Feed from "@/components/Feed";
 import Collections from "@/components/Collections";
 

@@ -1,4 +1,4 @@
-import RandomButton from "./RandomButton";
+import RandomButton from "./AddCollection";
 
 export default function Collections() {
   return (
